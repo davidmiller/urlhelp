@@ -4,8 +4,8 @@ import os
 from distutils.core import setup
 
 here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, 'README.txt')).read()
-CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
+README = open(os.path.join(here, 'README.rst')).read()
+CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()
 
 
 VERSION_FILE = os.path.join(here, "urlhelp/_version.py")
@@ -23,7 +23,7 @@ setup(
     author = "David Miller",
     author_email = "david@deadpansincerity.com",
     url = "https://github.com/davidmiller/urlhelp",
-    description = "Helpers for working with urls",
+    description = "Grab bag of helpers for working with urls",
     long_description = README + "\n\n" + CHANGES,
     classifiers = [
         "Programming Language :: Python",
@@ -33,6 +33,10 @@ setup(
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries"
+        ],
+    install_requires = [
+        'lxml',
+        'requests'
         ],
     packages = ['urlhelp'],
     )

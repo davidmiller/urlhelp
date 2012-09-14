@@ -4,9 +4,9 @@ VERS = File.read("urlhelp/_version.py").scan(/__version__ = ['"]([^'"]*)/)[0][0]
 # RPM build CONSTANTS
 SOURCED="build/rpm/SOURCES/"
 
-task :test, do
+task :test do
   p "Running unit tests for #{PROJ}"
-  sh "python -m pytest urlhelp/test"
+  sh "python -m pytest test"
 end
 
 task :rpm do
